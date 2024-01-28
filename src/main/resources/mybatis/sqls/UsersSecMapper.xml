@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.chigirh.knowledge.infra.mysql.mapper.UsersSecMapper">
+    <insert id="insert">
+        INSERT INTO users_sec
+        VALUES (
+            #{entity.userId},
+            #{entity.password},
+            #{entity.isInit},
+            #{entity.initCode}
+        )
+    </insert>
+    <select id="findByKey" resultType="com.chigirh.knowledge.infra.mysql.entity.UsersSecEntity">
+        SELECT
+            user_id,
+            password,
+            is_init,
+            init_code
+        FROM users_sec
+        WHERE user_id = #{userId}
+    </select>
+</mapper>

@@ -1,0 +1,40 @@
+server:
+  port: 9100
+
+mybatis:
+  mapper-locations: classpath*:/mybatis/sqls/**/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+
+
+spring:
+  message:
+    basename: messages
+    cache-seconds: -1
+    encoding: UTF-8
+
+  datasource:
+    writer:
+      url: jdbc:mysql://localhost:13306/knowledge_db
+      username: root
+      password: secret
+      driverClassName: com.mysql.jdbc.Driver
+    reader:
+      url: jdbc:mysql://localhost:13306/knowledge_db
+      username: root
+      password: secret
+      driverClassName: com.mysql.jdbc.Driver
+
+#  mail:
+#    host: smtp.gmail.com
+#    port: 587
+#    # Your Email Address.
+#    username: chigirh@gmail.com
+#    # Application Password.
+#    # SEE:https://support.google.com/accounts/answer/185833?hl=ja
+#    password: #note:アプリケーションキー
+#    properties.mail.smtp.auth: true
+#    properties.mail.smtp.starttls.enable: true
+#    properties.mail.smtp.ssl.trust: smtp.gmail.com
+
+logging.level.org.springframework.jdbc: debug
